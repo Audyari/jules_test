@@ -1,7 +1,8 @@
 fn main() {
-    let s1 = String::from("halo");
-    let s2 = &s1; // Meminjam (borrow) s1 tanpa memindahkannya
+    let mut s = String::from("halo");
 
-    println!("Isi s2 (peminjam) adalah: {}", s2);
-    println!("Isi s1 (pemilik) adalah: {}", s1); // Sekarang s1 masih bisa diakses!
+    let r1 = &mut s;
+    let r2 = &mut s; // ERROR: Tidak boleh ada dua mutable borrow dalam satu waktu
+
+    println!("{}, {}", r1, r2);
 }
