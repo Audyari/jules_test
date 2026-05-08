@@ -1,3 +1,6 @@
 fn main() {
-    println!("Hello, world!");
+    let x = 5;
+    println!("Nilai x adalah: {}", x);
+    x = 6; // ERROR: x bersifat immutable
+    println!("Nilai x sekarang adalah: {}", x);
 }
